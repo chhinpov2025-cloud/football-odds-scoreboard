@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Football Odds Scoreboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Football Odds Scoreboard</h1>
+
+    <div class="filters">
+      <div class="filter-row">
+        <label>Date:</label>
+        <select id="date-select">
+          <option value="all">All days</option>
+          <option value="today">Today</option>
+          <option value="tomorrow">Tomorrow</option>
+          <option value="custom">Custom Date</option>
+        </select>
+        <input type="date" id="custom-date" style="display:none" />
+      </div>
+
+      <div class="filter-row">
+        <label>League:</label>
+        <select id="league-select">
+          <option value="all">All Leagues</option>
+        </select>
+      </div>
+
+      <div class="filter-row">
+        <label>Search:</label>
+        <input id="search-input" placeholder="Team name" />
+      </div>
+
+      <div class="filter-row">
+        <label>Sort:</label>
+        <select id="sort-select">
+          <option value="time_asc">Time (Earliest first)</option>
+          <option value="time_desc">Time (Latest first)</option>
+          <option value="league">League</option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <button id="apply-btn">Apply Filters</button>
+        <button id="refresh-btn">Refresh</button>
+      </div>
+
+      <div id="last-updated" class="muted">Last updated: -</div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="scoreboard">
+        <thead>
+          <tr>
+            <th>League</th>
+            <th>Match Time</th>
+            <th>Home Team</th>
+            <th>Score</th>
+            <th>Away Team</th>
+            <th>Odds (Win/Draw/Lose)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="matches-body">
+          <tr><td colspan="7" class="muted">Loading matches...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="credits muted">Data source: The Odds API (replace <code>API_KEY</code> in script.js)</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

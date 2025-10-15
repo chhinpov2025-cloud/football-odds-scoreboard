@@ -1,0 +1,43 @@
+:root{
+  --bg:#f6f7f9;
+  --card:#fff;
+  --muted:#9aa0a6;
+  --accent:#f7f3e9;
+  --success:#2c9a57;
+  --warning:#ff8c3d;
+  --danger:#e53e3e;
+}
+.status-not-started { color: #6b7280; font-weight: 600; }
+.status-live { color: #dc2626; font-weight: 700; }
+.status-extra { color: #d97706; font-weight: 700; } /* orange-yellow for extra time */
+.status-finished { color: #16a34a; font-weight: 700; }
+.status-postponed { color: #f59e0b; font-weight: 700; }
+
+*{box-sizing:border-box}
+body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);margin:0;padding:20px;color:#222}
+.container{max-width:980px;margin:0 auto}
+h1{font-size:20px;margin:0 0 12px}
+.filters{background:var(--card);padding:14px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:14px}
+.filter-row{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.filter-row label{min-width:70px;color:#333;font-weight:600}
+.filter-row input[type="date"], .filters select, .filters input{padding:8px;border:1px solid #e3e6ea;border-radius:4px;min-width:160px}
+.filter-actions{display:flex;gap:10px;margin-top:6px}
+button{padding:8px 12px;border:1px solid #222;background:#fff;border-radius:4px;cursor:pointer}
+button:hover{opacity:.95}
+.muted{color:var(--muted);font-size:13px;margin-top:8px}
+
+.table-wrap{overflow:auto;background:var(--card);border-radius:6px;padding:6px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+table{width:100%;border-collapse:collapse;background:transparent}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #f0f0f0;font-size:14px}
+th{background:#fbfbfc;color:#222;font-weight:700}
+tbody tr:nth-child(odd){background:transparent}
+tbody tr.live{background:linear-gradient(90deg, rgba(247,243,233,0.6), rgba(255,255,255,0));}
+.status-live{color:var(--danger);font-weight:700}
+.status-finished{color:var(--success);font-weight:700}
+.status-not-started{color:#6b7280}
+.league-pill{font-size:12px;padding:4px 8px;border-radius:999px;background:#f5f5f5;display:inline-block}
+@media (max-width:700px){
+  th,td{font-size:12px;padding:8px}
+  .filter-row{flex-direction:column;align-items:flex-start}
+  .filter-row label{min-width:0}
+}
